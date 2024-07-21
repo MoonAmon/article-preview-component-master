@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+@media (min-width: 1400px) {
+    body {
+        background-color: hsl(213, 38%, 94%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    main {
+        font-family: 'Manrope';
+        color: #454c54;
+    }
+
+    .main-img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .main-card {
+        display: flex;
+        overflow: hidden;
+        background-color: #fdfdfd;
+        align-items: center;
+        width: 100vh;
+        height: 500px;
+        border-radius: 20px;
+    }
+
+
+    .main-text p {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .main-text h1 {
+        font-size: 30px;
+        margin: 20px
+    }
+
+    .share-popup {
+        position: absolute;
+        display: none;
+        background-color: #475569;
+        width: 250px;
+        height: 60px;
+        border-radius: 10px;
+        top: 53%;
+        left: 140vh;
+        transform: translate(-50%, -50%);
+    }
+
+    .share-popup::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #475569 transparent transparent transparent;
+    }
+
+    .popup-content {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .popup-content p {
+        color: #707986;
+        letter-spacing: 6px;
+    }
+
+    .popup-content button {
+        border: none;
+        border-radius: 180px;
+        cursor: pointer;
+        background: none;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 380px;
+    }
+
+    .user-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .btn-share {
+        border-radius: 180px;
+        border: none;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    #user-img {
+        border-radius: 180px;
+        height: 70px;
+        width: 70px;
+    }
+
+
+}
+
+
+@media (max-width: 1400px) {
+
+    body {
+        background-color: hsl(210, 46%, 95%);
+    }
+
+    main {
+        font-family: 'Manrope';
+        color: #454c54;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+        width: 80%;
+    }
+
+    main .main-card {
+        flex-direction: column;
+        background-color: #fdfdfd;
+        border-radius: 10px;
+    }
+
+    main .main-card .main-img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    main .main-card .main-text h1 {
+        font-size: 20px;
+    }
+
+    main .main-card .main-text p {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 25px;
+    }
+
+    main .main-card .main-text h1, main .main-card .main-text p {
+        padding: 6px;
+        margin: 5px;
+    }
+
+    main .main-card .main-text {
+        padding: 20px;
+        word-spacing: 2px;
+    }
+
+    main .main-card .user-card {
+        display: flex;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-around;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: 20px;
+    }
+
+    main .main-card .user-card #user-img {
+        border-radius: 180px;
+        padding-right: 5px;
+        width: 50px;
+    }
+
+    .user-info {
+        width: 100%;
+        display: flex;
+    }
+
+    .user-text {
+        padding-left: 10px;
+    }
+
+    main .main-card .user-card .btn-share {
+        border-radius: 180px;
+        border: none;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    main .main-card .user-card .btn-social {
+        border: none;
+        border-radius: 180px;
+        cursor: pointer;
+        background: none;
+    }
+
+    main .main-card .user-card .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+}
+
+
+
