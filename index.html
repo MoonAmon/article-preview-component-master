@@ -10,58 +10,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <title>Frontend Mentor | Article preview component</title>
-
-    <style>
-        .attribution {
-            font-size: 11px;
-            text-align: center;
-        }
-
-        .attribution a {
-            color: hsl(228, 45%, 44%);
-        }
-    </style>
+    <script src="script.js" defer></script>
 </head>
 <body>
 <main>
-    <div class="main-card">
-        <img src="images/drawers.jpg" class="main-img" alt="">
-        <div class="card-content">
-            <div class="main-text">
+    <article>
+        <img src="images/drawers.jpg" alt="furniture">
+        <section>
+            <header>
                 <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
                 <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and
                     uninviting.
                     I’ve got some simple tips to help you make any room feel complete.</p>
-            </div>
-            <div class="user-card">
-                <div class="user-info">
-                    <div class="user-text">
-                    <img src="images/avatar-michelle.jpg" id="user-img">
-                        <p><strong>Michelle Appleton</strong>
-                        <br>28 Jun 2020</p>
+            </header>
+            <footer>
+                <img src="images/avatar-michelle.jpg" width="40" height="40" alt="avatar of michelle">
+                <strong>Michelle Appleton</strong>
+                <span>28 Jun 2020</span>
+                <button id="share-btn-js" aria-label="share article" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/icon-share.svg" width="15" height="13" alt="" role="presentation">
+                </button>
+                <div class="tooltip-wrapper invisible" id="tooltip-wrapper-js">
+                    <div id="tooltip" role="tooltip">
+                        SHARE
+                        <ul>
+                            <li>
+                                <a href="#" aria-label="facebook link" target="_blank">
+                                    <img src="images/icon-facebook.svg" width="20" height="20" alt="facebook-link"
+                                         rel="noreferrer">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="twitter link" target="_blank">
+                                    <img src="images/icon-twitter.svg" width="20" height="20" alt="facebook-link"
+                                         rel="noreferrer">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="pinterest link" target="_blank">
+                                    <img src="images/icon-pinterest.svg" width="20" height="20" alt="facebook-link"
+                                         rel="noreferrer">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                <div class="btn-container">
-                    <div class="share-popup">
-                        <div class="popup-content">
-                            <p>SHARE</p>
-                            <button><img src="images/icon-facebook.svg"></button>
-                            <button><img src="images/icon-twitter.svg"></button>
-                            <button><img src="images/icon-pinterest.svg"></button>
-                        </div>
-                    </div>
-                    <button type="button" class="btn-share">
-                        <img src="images/icon-share.svg" alt="Share button">
-                    </button>
                 </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            </footer>
+        </section>
+    </article>
 </main>
-<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Thiago Amancio</a>.
-</div>
 </body>
-<script src="script.js"></script>
 </html>

@@ -1,223 +1,348 @@
-* {
-    padding: 0;
-    margin: 0;
+/* Global definitions */
+:root {
+    /* Colors */
+    --color-neutral-1: hsl(0, 0%, 100%);
+    --color-neutral-2: hsl(210, 46%, 95%);
+    --color-neutral-3: hsl(212, 23%, 48%);
+    --color-neutral-4: hsl(214, 17%, 48%);
+    --color-neutral-5: hsl(217, 19%, 35%);
+    --color-neutral-6: hsl(210, 29%, 50.34%);
+
+    /* Font sizes */
+    --font-size-s: 0.8125rem;
+    --font-size-base: 1rem;
+    --font-size-m: 1.25rem;
+
+    /* Font weights */
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Line heights */
+    --line-height-s: 1.25rem;
+    --line-height-base: 1.5rem;
+    --line-height-m: 1.75rem;
+
+    /* Letter spacing */
+    --letter-spacing-s: 0.0075rem;
+    --letter-spacing-base: 0.0125rem;
+    --letter-spacing-m: 0.015625rem;
+    --letter-spacing-l: 0.3125rem;
+
+    /* Box shadows */
+    --box-shadow-1: 0rem 2.5rem 2.5rem -0.625rem var(--color-neutral-6);
+    --box-shadow-2: 0rem 0.625rem 0.625rem 0rem var(--color-neutral-6);
+
+    /* Border widths */
+    --border-width-none: 0rem;
+    --border-width-soft: 0.625rem;
+    --border-width-round: 100%;
+
+    /* Spacing */
+    --space-none: 0rem;
+    --space-xxs-1: 0.5rem;
+    --space-xs-1: 0.5625rem;
+    --space-xs-2: 0.625rem;
+    --space-s-1: 0.75rem;
+    --space-s-2: 1rem;
+    --space-base: 1.25rem;
+    --space-m-1: 1.3125rem;
+    --space-m-2: 1.375rem;
+    --space-l-1: 2rem;
+    --space-l-2: 2.25rem;
+    --space-xl-1: 2.5rem;
 }
 
+@font-face {
+    font-family: "Manrope";
+    src: url("./fonts/Manrope/static/Manrope-Medium.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
 
-@media (min-width: 1400px) {
-    body {
-        background-color: hsl(213, 38%, 94%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+@font-face {
+    font-family: "Manrope";
+    src: url("./fonts/Manrope/static/Manrope-Bold.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/** CSS Resets **/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, button {
+    line-height: 1.1;
+}
+
+/* Avoid text overflows */
+h1, p {
+    overflow-wrap: break-word;
+}
+
+/* Remove list styles on ul, elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Remove built-in form typography styles */
+button {
+  font: inherit;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    /* Aplicado em links sem o atributo class */
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/****************************************/
+
+/*** Main styling ***/
+body {
+    font-family: "Manrope";
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-s);
+    background-color: var(--color-neutral-2);
+}
+
+button {
+    border-width: var(--border-width-none);
+    border-radius: var(--border-width-round);
+    width: var(--space-l-1);
+    height: var(--space-l-1);
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article {
+    background-color: var(--color-neutral-1);
+    border-radius: var(--border-width-soft);
+    min-width: 20.4375rem;
+    box-shadow: var(--box-shadow-1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+article > img {
+    border-top-left-radius: var(--border-width-soft);
+    border-top-right-radius: var(--border-width-soft);
+    border-bottom-left-radius: var(--border-width-none);
+    border-bottom-right-radius: var(--border-width-none);
+    min-width: 20.4375rem;
+    min-height: 12.5rem;
+    object-fit: cover;
+    object-position: 0 -1rem;
+}
+
+article > section {
+    padding: var(--space-l-2) var(--space-l-1) var(--space-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-l-1);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s-1);
+}
+
+h1 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+    color: var(--color-neutral-5);
+}
+
+p {
+    color: var(--color-neutral-4);
+}
+
+article footer {
+    display: grid;
+    grid-template-areas:
+            "avatar name button"
+            "avatar date button";
+    grid-template-columns: var(--space-xl-1) 1fr var(--space-l-1);
+    column-gap: var(--space-s-2);
+    row-gap: var(--space-none);
+    align-items: center;
+}
+
+footer > img {
+    border-radius: var(--border-width-round);
+    grid-area: avatar;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+footer > strong {
+    grid-area: name;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-3);
+}
+
+footer > span {
+    grid-area: date;
+    color: var(--color-neutral-3);
+}
+
+footer > button {
+    grid-area: button;
+    background-color: var(--color-neutral-2);
+}
+
+button > img {
+    margin: auto;
+    width: 0.9375rem;
+    height: 0.8125rem;
+}
+
+li img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+[role="tooltip"] {
+    background-color: var(--color-neutral-5);
+    color: var(--color-neutral-2);
+    letter-spacing: var(--letter-spacing-l);
+    padding: var(--space-s-2) var(--space-l-1);
+    border-bottom-left-radius: var(--border-width-soft);
+    border-bottom-right-radius: var(--border-width-soft);
+    display: flex;
+    gap: var(--space-m-1);
+    align-items: center;
+    min-width: 20.4375rem;
+    min-height: 4rem;
+}
+
+.tooltip-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+[role="tooltip"] button img {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(77%) saturate(0%)
+        hue-rotate(60deg) brightness(107%) contrast(100%);
+}
+
+ul {
+    display: flex;
+    gap: var(--space-s-2);
+    align-items: center;
+}
+
+@media (min-width: 80rem) {
+    article {
+        max-width: 45.625rem;
+        flex-direction: row;
     }
 
-    main {
-        font-family: 'Manrope';
-        color: #454c54;
+    article > img {
+        border-top-left-radius: var(--border-width-soft);
+        border-top-right-radius: var(--border-width-none);
+        border-bottom-left-radius: var(--border-width-soft);
+        border-bottom-right-radius: var(--border-width-none);
+        min-width: 17.8125rem;
+        min-height: 17.5rem;
+        object-position: 0 0;
     }
 
-    .main-img {
-        width: 100%;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+    article > section {
+        padding: var(--space-l-1) var(--space-xl-1);
+        gap: var(--space-base);
     }
 
-    .main-card {
-        display: flex;
-        overflow: hidden;
-        background-color: #fdfdfd;
-        align-items: center;
-        width: 100vh;
-        height: 500px;
-        border-radius: 20px;
+    h1 {
+        font-size: var(--font-size-m);
+        line-height: var(--line-height-m);
+        letter-spacing: var(--letter-spacing-m);
     }
 
-
-    .main-text p {
-        font-size: 20px;
-        margin: 20px;
+    footer > button:hover {
+        background-color: var(--color-neutral-4);
     }
 
-    .main-text h1 {
-        font-size: 30px;
-        margin: 20px
+    footer > button:hover img {
+     filter: brightness(0) saturate(100%) invert(90%) sepia(77%) saturate(0%)
+        hue-rotate(60deg) brightness(107%) contrast(100%);
     }
 
-    .share-popup {
-        position: absolute;
-        display: none;
-        background-color: #475569;
-        width: 250px;
-        height: 60px;
-        border-radius: 10px;
-        top: 53%;
-        left: 140vh;
-        transform: translate(-50%, -50%);
+    [role="tooltip"] {
+        border-top-left-radius: var(--border-width-soft);
+        border-top-right-radius: var(--border-width-soft);
+        box-shadow: var(--box-shadow-2);
+        min-width: 15.5rem;
+        min-height: 3.43rem;
     }
 
-    .share-popup::after {
+    .tooltip-wrapper {
+        left: inherit;
+        right: -4.125rem;
+        bottom: 6rem;
+    }
+
+    .tooltip-wrapper::after {
         content: "";
         position: absolute;
-        top: 100%;
-        right: 50%;
-        margin-left: -10px;
-        border-width: 10px;
-        border-style: solid;
-        border-color: #475569 transparent transparent transparent;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: var(--space-s-1) solid transparent;
+        border-right: var(--space-s-1) solid transparent;
+        border-top: var(--space-s-1) solid var(--color-neutral-5);
     }
-
-    .popup-content {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .popup-content p {
-        color: #707986;
-        letter-spacing: 6px;
-    }
-
-    .popup-content button {
-        border: none;
-        border-radius: 180px;
-        cursor: pointer;
-        background: none;
-    }
-
-    .user-info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 380px;
-    }
-
-    .user-text {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .btn-share {
-        border-radius: 180px;
-        border: none;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-    }
-
-    #user-img {
-        border-radius: 180px;
-        height: 70px;
-        width: 70px;
-    }
-
-
 }
-
-
-@media (max-width: 1400px) {
-
-    body {
-        background-color: hsl(210, 46%, 95%);
-    }
-
-    main {
-        font-family: 'Manrope';
-        color: #454c54;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 50px;
-        width: 80%;
-    }
-
-    main .main-card {
-        flex-direction: column;
-        background-color: #fdfdfd;
-        border-radius: 10px;
-    }
-
-    main .main-card .main-img {
-        width: 100%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    main .main-card .main-text h1 {
-        font-size: 20px;
-    }
-
-    main .main-card .main-text p {
-        font-size: 15px;
-        font-weight: 300;
-        line-height: 25px;
-    }
-
-    main .main-card .main-text h1, main .main-card .main-text p {
-        padding: 6px;
-        margin: 5px;
-    }
-
-    main .main-card .main-text {
-        padding: 20px;
-        word-spacing: 2px;
-    }
-
-    main .main-card .user-card {
-        display: flex;
-        padding: 20px;
-        flex-direction: row;
-        justify-content: space-around;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: 20px;
-    }
-
-    main .main-card .user-card #user-img {
-        border-radius: 180px;
-        padding-right: 5px;
-        width: 50px;
-    }
-
-    .user-info {
-        width: 100%;
-        display: flex;
-    }
-
-    .user-text {
-        padding-left: 10px;
-    }
-
-    main .main-card .user-card .btn-share {
-        border-radius: 180px;
-        border: none;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-    }
-
-    main .main-card .user-card .btn-social {
-        border: none;
-        border-radius: 180px;
-        cursor: pointer;
-        background: none;
-    }
-
-    main .main-card .user-card .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row-reverse;
-        gap: 10px;
-    }
-
-}
-
-
-
